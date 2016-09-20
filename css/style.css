@@ -1,0 +1,52 @@
+/**
+	Portfolio
+	@see http://bootsnipp.com/snippets/k231Q
+*/
+
+.close {
+	padding: 0 5px;
+	border: 0;
+}
+
+.portfolio .panel-footer,
+.portfolio .panel-heading {
+	text-align: center;
+}
+.panel-image {
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.panel-image:hover {
+	opacity: 0.5;
+}
+
+.hide-panel-body {
+	display: none;
+}
+
+.portfolio .panel-footer a {
+	text-align: center;
+	padding: 0 10px;
+	color: rgb(100, 100, 100);
+}
+
+#portfolioModal .carousel-indicators li {
+  border: 1px solid #dd890b;
+}
+#portfolioModal .carousel-indicators .active {
+  background-color: #dd890b;
+}
+
+/* Control buttons  */
+#portfolioModal .carousel-control
+{
+  background: none;
+  text-shadow: none;
+}
+
+#portfolioModal .modal-images .nav img {
+	width: auto;
+	max-width: 100px;
+	height: auto;
+}
