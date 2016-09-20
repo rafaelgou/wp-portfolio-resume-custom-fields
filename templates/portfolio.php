@@ -1,44 +1,41 @@
 <?php
 /*
-
 Template Name: Portfolio
-
 */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main container" role="main">
-			<?php	while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+<div id="primary" class="content-area">
+	<main id="main" class="site-main container" role="main">
 
-				<div class="row portfolio">
-
-				<?php
-				$items = CFS()->get( 'items' );
-				foreach ( $items as $k => $f ) :
-					$title       = $f['title'];
-					$url         = $f['url'];
-					$description = $f['description'];
-					$images      = $f['images'];
-					$cover       = array_shift($f['images'])['image'];
-				?>
-					<div class="col-xs-12 col-sm-6">
-							<div class="panel panel-default">
-									<div class="panel-heading"><strong><?php echo $title ?></strong></div>
-									<div class="panel-image" data-toggle="modal" data-target="#portfolioModal" data-item="<?php echo $k ?>">
-											<img src="<?php echo $cover ?>" />
-									</div>
-							</div>
-					</div>
-				<?php endforeach; ?>
+		<?php	while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'template-parts/content', 'page' ); ?>
+			<div class="row portfolio">
+			<?php
+			$items = CFS()->get( 'items' );
+			foreach ( $items as $k => $f ) :
+				$title       = $f['title'];
+				$url         = $f['url'];
+				$description = $f['description'];
+				$images      = $f['images'];
+				$cover       = array_shift($f['images'])['image'];
+			?>
+				<div class="col-xs-12 col-sm-6">
+						<div class="panel panel-default">
+								<div class="panel-heading"><strong><?php echo $title ?></strong></div>
+								<div class="panel-image" data-toggle="modal" data-target="#portfolioModal" data-item="<?php echo $k ?>">
+										<img src="<?php echo $cover ?>" />
+								</div>
+						</div>
 				</div>
-			<?php endwhile;  ?>
+			<?php endforeach; ?>
+			</div>
+		<?php endwhile;  ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
-	<div class="modal" id="portfolioModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModalLabel">
+<div class="modal" id="portfolioModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -49,7 +46,7 @@ get_header(); ?>
 
 				<div class="row">
 					<div class="col-md-8">
-						<div class="modal-images" id="modalImagesCarousel" class="carousel slide" data-ride="carousel">
+						<div class="modal-images carousel slide" id="modalImagesCarousel" data-ride="carousel">
 
 							<!-- Indicators -->
 							<ol class="carousel-indicators"></ol>
@@ -88,8 +85,8 @@ get_header(); ?>
     </div>
   </div>
 </div>
-	<script>
-		var portfolioItems = <?php echo json_encode(CFS()->get( 'items' )) ?>;
-	</script>
+<script>
+	var portfolioItems = <?php echo json_encode(CFS()->get( 'items' )) ?>;
+</script>
 <?php
 get_footer();
