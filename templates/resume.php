@@ -85,6 +85,7 @@ get_header(); ?>
 						$jobTitle    = $f['job_title'];
 						$companyName = $f['company_name'];
 						$location    = $f['location'];
+						$telecommute = $f['telecommute'];
 						$presentJob  = $f['present_job'];
 						$description = $f['description'];
 						$presentJob  = $f['present_job'];
@@ -109,7 +110,7 @@ get_header(); ?>
 						<div id="collapse<?php echo $k ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $k ?>">
 							<div class="panel-body">
 								<p><?php echo $companyName ?> - <?php echo $location ?></p>
-								<p>Telecommute</p>
+								<?php if ($telecommute) : ?><p>Telecommute</p><?php endif; ?>
 								<p><?php echo $description ?></p>
 							</div>
 						</div>
@@ -158,6 +159,28 @@ get_header(); ?>
 				</ul>
 
 			<?php endwhile;  ?>
+
+			<div class="well">
+				<p>This resumè was built using:</p>
+				<ul>
+					<li>
+						<a href="/rafaelgou/wp-portfolio-resume-custom-fields/master/wordpress.org">Wordpress</a>
+					</li>
+					<li>
+						<a href="https://wordpress.org/plugins/custom-field-suite/" rel="nofollow noreferrer" target="_blank">Custom Fields Suite</a>
+					</li>
+					<li>
+						<a href="http://getbootstrap.com" rel="nofollow noreferrer" target="_blank">Twitter Bootstrap</a>
+					</li>
+				</ul>
+				<p>
+					If you want to build something like that in your website, please see
+					how I did this here on it
+					<a href="https://github.com/rafaelgou/wp-portfolio-resume-custom-fields" rel="nofollow noreferrer" target="_blank">
+						GitHub repository
+					</a>
+				</p>
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

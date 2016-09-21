@@ -32,6 +32,28 @@ get_header(); ?>
 			</div>
 		<?php endwhile;  ?>
 
+		<div class="well">
+			<p>This portfolio was built using:</p>
+			<ul>
+				<li>
+					<a href="/rafaelgou/wp-portfolio-resume-custom-fields/master/wordpress.org">Wordpress</a>
+				</li>
+				<li>
+					<a href="https://wordpress.org/plugins/custom-field-suite/" rel="nofollow noreferrer" target="_blank">Custom Fields Suite</a>
+				</li>
+				<li>
+					<a href="http://getbootstrap.com" rel="nofollow noreferrer" target="_blank">Twitter Bootstrap</a>
+				</li>
+			</ul>
+			<p>
+				If you want to build something like that in your website, please see
+				how I did this here on it
+				<a href="https://github.com/rafaelgou/wp-portfolio-resume-custom-fields" rel="nofollow noreferrer" target="_blank">
+					GitHub repository
+				</a>
+			</p>
+		</div>
+
 	</main><!-- #main -->
 </div><!-- #primary -->
 
@@ -85,6 +107,8 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
+
 <script>
 	var portfolioItems = <?php echo json_encode(CFS()->get( 'items' )) ?>;
 </script>
